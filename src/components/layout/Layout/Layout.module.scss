@@ -1,0 +1,42 @@
+@import '@/styles/theme-variables.scss';
+@import '@/styles/mixins.scss';
+
+.layout {
+  @include Flex(initial, flex-start, column);
+  @include Size(calc(100%), max-content);
+  background: #f3f6fe;
+  min-height: 100vh;
+  padding-left: 217px;
+
+  &__header {
+    @include Flex(center, space-between, row);
+    padding-left: 20px;
+    background: $white;
+    position: sticky;
+    top: 0;
+    right: 0;
+    box-shadow: 0px 8px 28px 0px rgba(72, 89, 102, 0.1);
+    height: 70px;
+    z-index: 1;
+
+    &_logout {
+      @include Size(141px, 36px);
+      margin-right: 20px;
+    }
+
+    &__left_side {
+      @include Size(50%, 100%);
+      @include Flex(center, left, row);
+    }
+  }
+
+  &__body {
+    min-height: calc(100% - 70px);
+    width: 100%;
+    background: #f3f6fe;
+  }
+
+  &__logo_container {
+    display: none;
+  }
+}

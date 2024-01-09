@@ -1,0 +1,46 @@
+@import '@/styles/theme-variables.scss';
+@import '@/styles/mixins.scss';
+
+.white_board {
+  @include Flex(center, flex-start, column);
+  box-sizing: border-box;
+  padding-top: 50px;
+  width: 100%;
+  padding-bottom: 20px;
+
+  &__header_right {
+    gap: 14px;
+    @include Size(max-content, 100%);
+    @include Flex(center, right, row);
+  }
+
+  &__section_header {
+    @include Flex(flex-start, space-between, row);
+    @include Size(100%, max-content);
+
+    padding: 37px 24px 17px 20px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  &__navigation {
+    @include Flex(center, left, row);
+
+    width: 100%;
+    padding-left: 40px;
+    gap: 5px;
+    box-sizing: border-box;
+  }
+
+  &__content {
+    @include Size(calc(100% - 40px), calc(100% - 30px - 25px));
+
+    border-radius: 12px;
+    border: 0.7px solid #dfe5f9;
+    background: $white;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,36 @@
+@import '@/styles/theme-variables.scss';
+@import '@/styles/mixins.scss';
+
+.sidebar {
+  @include Flex(left, flex-start, column);
+  @include Size(217px, 100%);
+  text-align: left;
+  background: #1f263e;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  &__header {
+    @include OxygenFont($white, 18px, 700);
+    text-align: left;
+    width: max-content;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    padding-left: 22px;
+  }
+
+  &__logo_container {
+    @include Flex(center, flex-end, column);
+    width: 175px;
+    border-bottom: #f8f9fb30 1px solid;
+    box-sizing: border-box;
+    padding: 10.5px;
+    padding-top: 20px;
+    margin-left: 20px;
+  }
+
+  &__logo {
+    @include Size(103px, 28px);
+  }
+}

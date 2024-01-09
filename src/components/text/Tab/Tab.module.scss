@@ -1,0 +1,21 @@
+@import '@/styles/theme-variables.scss';
+@import '@/styles/mixins.scss';
+
+.pagination_item {
+  @include Flex(center, left, row);
+  @include Size(max-content, 30px);
+  gap: 5px;
+
+  &__text {
+    @include OxygenFont(#1f263e, 11px, 300);
+  }
+
+  &:hover &__icon {
+    fill: linear-gradient(122deg, #0043ff -6.89%, #a370f1 100%);
+  }
+
+  &:hover &__text {
+    @include OxygenFont(#1f263e, 11px, 700);
+    color: #1348fc;
+  }
+}

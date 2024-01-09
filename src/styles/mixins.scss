@@ -1,0 +1,33 @@
+@import url('./keyframes.scss');
+@mixin Flex($align, $justify, $direction) {
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  display: flex;
+}
+
+@mixin Size($w, $h) {
+  height: $h;
+  width: $w;
+}
+
+@mixin OxygenFont($color, $size, $weight) {
+  color: $color;
+  font-family: Oxygen;
+  font-size: $size;
+  font-style: normal;
+  font-weight: $weight;
+  line-height: 15px;
+}
+
+@mixin CenterFixed() {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin Spin($time) {
+  -webkit-animation: spin $time linear infinite; /* Safari */
+  animation: spin $time linear infinite;
+}

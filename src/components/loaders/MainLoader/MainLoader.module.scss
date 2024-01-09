@@ -1,0 +1,30 @@
+@import '@/styles/theme-variables.scss';
+@import '@/styles/mixins.scss';
+
+.loader {
+  &__background {
+    @include Size(100vw, 100vh);
+    @include Flex(center, center, row);
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+  }
+
+  &__centered {
+    z-index: 10;
+    padding-left: 217px;
+    @include CenterFixed;
+  }
+
+  &__icon {
+    border-radius: 16px;
+    background: rgba(31, 38, 62, 0.8);
+    @include Size(114px, 94px);
+    @include Flex(center, center, row);
+
+    & img {
+      @include Spin(1s);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import '@/styles/theme-variables.scss';
+@import '@/styles/mixins.scss';
+
+.droppable {
+  background-color: #f4f5f7;
+  border-radius: 5px;
+  @include Size(300px, max-content);
+  @include Flex(center, flex-start, column);
+
+  &__body {
+    @include Flex(center, flex-start, column);
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100px;
+  }
+}

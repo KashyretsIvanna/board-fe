@@ -1,0 +1,40 @@
+@import '@/styles/theme-variables.scss';
+@import '@/styles/mixins.scss';
+
+.draggable {
+  @include Flex(center, flex-start, column);
+
+  padding: var(--ds-space-150, 12px);
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: var(
+    --ds-shadow-raised,
+    0 1px 1px rgba(23, 43, 77, 0.2),
+    0 0 1px rgba(23, 43, 77, 0.2)
+  );
+  transition:
+    background-color 140ms ease-in-out 0s,
+    color 140ms ease-in-out 0s;
+  background-color: var(--ds-surface-raised, #ffffff);
+  --jsw-card-background-color: var(--ds-surface-raised, #ffffff);
+  color: var(--ds-text, #172b4d);
+  filter: none;
+  box-sizing: border-box;
+
+  &__container {
+    width: 100%;
+    padding: 3px 12px 3px;
+    box-sizing: border-box;
+  }
+
+  &__description {
+    @include OxygenFont(#000, 14px, 400);
+    text-align: left;
+    max-width: 100%;
+  }
+  &__title {
+    @include OxygenFont(#000, 14px, 700);
+    text-align: left;
+    max-width: 100%;
+  }
+}

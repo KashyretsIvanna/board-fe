@@ -1,0 +1,13 @@
+@import '@/styles/theme-variables.scss';
+@import '@/styles/mixins.scss';
+
+.button {
+  @include Size(312px, 62px);
+  @include OxygenFont($white, 16px, 700);
+  @include Flex(center, center, row);
+  border-radius: 8px;
+  background: $blue;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}

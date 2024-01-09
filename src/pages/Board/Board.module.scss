@@ -1,0 +1,14 @@
+@import '@/styles/theme-variables.scss';
+@import '@/styles/mixins.scss';
+
+.board {
+  &__container {
+    @include Size(100vw, max-content);
+    @include Flex(center, space-between, row);
+  }
+
+  &__cols_container {
+    @include Flex(flex-start, space-between, row);
+    height: max-content;
+  }
+}

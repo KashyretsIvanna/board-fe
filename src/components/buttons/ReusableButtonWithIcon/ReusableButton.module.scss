@@ -1,0 +1,20 @@
+@import '@/styles/theme-variables.scss';
+@import '@/styles/mixins.scss';
+
+.button {
+  @include Size(100%, 100%);
+  @include OxygenFont(black, 12px, 400);
+  @include Flex(center, center, row);
+  background: $blue;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  gap: 5px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+
+  div {
+    @include OxygenFont(black, 14px, 700);
+    text-transform: uppercase;
+  }
+}

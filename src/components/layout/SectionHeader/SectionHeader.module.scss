@@ -1,0 +1,10 @@
+@import '@/styles/mixins.scss';
+
+.section_header {
+  gap: 5px;
+  @include Flex(center, space-between, row);
+
+  &__text {
+    @include OxygenFont(#000a12, 15px, 700);
+  }
+}
