@@ -11,7 +11,7 @@ import { persistor, store } from './store/store';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Suspense fallback={<div></div>}>
-      <BrowserRouter basename={import.meta.env.PUBLIC_URL??undefined}>
+      <BrowserRouter basename={import.meta.env.PUBLIC_URL ?? undefined}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}></PersistGate>
           <App />

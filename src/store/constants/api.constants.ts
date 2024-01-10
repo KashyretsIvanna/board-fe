@@ -1,6 +1,6 @@
-export const baseApiUrl: string = import.meta.env.VITE_API_URL;
+export const baseApiUrl: string = 'https://name-cepo.onrender.com';
 
-export const baseAdminUrl: string = import.meta.env.VITE_ADMIN_URL;
+export const baseAdminUrl: string = 'https://kashyretsivanna.github.io/board-fe'
 
 export const keepUnusedDataFor = 0.01;
 export const ApiTags = {
