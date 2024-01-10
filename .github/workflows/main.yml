@@ -29,7 +29,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd ~
-            cp .env ~/admin/development/.env
-            cp .env ~/admin/.env
-            chmod +x redeploy-admin-front.sh
-            bash ./redeploy-admin-front.sh
+            cp .env ~/board/development/.env
+            cp .env ~/board/.env
+            chmod +x redeploy-board-front.sh
+            bash ./redeploy-board-front.sh

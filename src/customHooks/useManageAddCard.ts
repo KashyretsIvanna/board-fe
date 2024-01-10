@@ -7,7 +7,7 @@ const UseManageAddCard = () => {
   const [title, setTitle] = useState('');
   const [categoryToCreate, setCategoryToCreate] = useState('');
   const [description, setDescription] = useState('');
-  const [createCard, { data: cardData, error: cardError }] = useCreateCardMutation();
+  const [createCard, { data: cardData, error: cardError, isLoading: isCreateCardLoading }] = useCreateCardMutation();
 
   const addCard = (categoryId: string) => {
     setAddCardIsOpen(true);
@@ -35,6 +35,7 @@ const UseManageAddCard = () => {
     description,
     setTitle,
     setDescription,
+    isCreateCardLoading
   };
 };
 

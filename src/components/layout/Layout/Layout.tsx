@@ -6,6 +6,7 @@ import ReusableButtonWithIcon from '@/components/buttons/ReusableButtonWithIcon/
 import SelectSearch from '@/components/inputs/Search/Search';
 import SideBar from '@/components/layout/SideBar/SideBar';
 import WhiteBoard from '@/components/layout/WhiteBoard/WhiteBoard';
+import MainLoader from '@/components/loaders/MainLoader/MainLoader';
 import ReusableModal from '@/components/modals/ReusableModal/ReusableModal';
 import UseManageBoard from '@/customHooks/useManageBoard';
 import LogoutIcon from '@/images/icons/bird.svg';
@@ -31,6 +32,7 @@ function AdminLayout(props: {
     setName,
     newIdOpen,
     setNewIdOpen,
+    isCreateBoardLoading,
   } = UseManageBoard();
 
   return (
@@ -89,6 +91,7 @@ function AdminLayout(props: {
             <Button onClick={onBoardCreate} variant="outlined">
               Submit
             </Button>
+            <MainLoader isLoading={isCreateBoardLoading} />
           </>
         }
       />
@@ -101,6 +104,7 @@ function AdminLayout(props: {
           children={createdBoardData.id}
         />
       )}
+      <MainLoader isLoading={isCreateBoardLoading} />
     </>
   );
 }

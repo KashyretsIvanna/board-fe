@@ -24,9 +24,17 @@ function Board() {
     setDescription,
     setTitle,
     setAddCardIsOpen,
+    isCreateCardLoading,
   } = UseManageAddCard();
 
-  const { onDrop, currentBoardId, setCurrentBoardId, data } = UseManageCardOrder();
+  const {
+    onDrop,
+    currentBoardId,
+    setCurrentBoardId,
+    isBoardByIdLoading,
+    data,
+    isUpdateOrderLoading,
+  } = UseManageCardOrder();
 
   const onSearch = (search: string) => {
     setCurrentBoardId(search.trim());
@@ -68,7 +76,7 @@ function Board() {
         )}
       </AdminLayout>
 
-      <MainLoader isLoading={false} />
+      <MainLoader isLoading={isCreateCardLoading || isUpdateOrderLoading || isBoardByIdLoading} />
       <ReusableModal
         handleClose={() => {
           setAddCardIsOpen(false);
@@ -99,6 +107,9 @@ function Board() {
             <Button onClick={onCardSubmit} variant="outlined">
               Submit
             </Button>
+            <MainLoader
+              isLoading={isCreateCardLoading || isUpdateOrderLoading || isBoardByIdLoading}
+            />
           </>
         }
       />

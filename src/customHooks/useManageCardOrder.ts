@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useGetBoardByIdQuery } from '@/store/services/boardApi';
 import { useUpdateCardOrderMutation } from '@/store/services/cardApi';
@@ -7,8 +7,8 @@ import { TargetItem } from '@/types/board.type';
 const UseManageCardOrder = () => {
   const [currentBoardId, setCurrentBoardId] = useState<string>('');
 
-  const { data } = useGetBoardByIdQuery({ boardId: currentBoardId });
-  const [updateCardOrder] = useUpdateCardOrderMutation();
+  const { data, isLoading: isBoardByIdLoading } = useGetBoardByIdQuery({ boardId: currentBoardId });
+  const [updateCardOrder, { isLoading: isUpdateOrderLoading }] = useUpdateCardOrderMutation();
 
   const onDrop = async (
     ev: React.DragEvent<HTMLDivElement>,
@@ -40,6 +40,8 @@ const UseManageCardOrder = () => {
     currentBoardId,
     setCurrentBoardId,
     data,
+    isUpdateOrderLoading,
+    isBoardByIdLoading
   };
 };
 
