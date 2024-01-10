@@ -1,6 +1,4 @@
-export const baseApiUrl: string = 'https://name-cepo.onrender.com';
-
-export const baseAdminUrl: string = 'https://kashyretsivanna.github.io/board-fe';
+export const baseApiUrl: string = 'https://name-cepo.onrender.com/api';
 
 export const keepUnusedDataFor = 0.01;
 export const ApiTags = {
