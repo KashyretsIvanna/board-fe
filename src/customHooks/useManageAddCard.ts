@@ -5,22 +5,23 @@ import { useCreateCardMutation } from '@/store/services/cardApi';
 const UseManageAddCard = () => {
   const [addCardIsOpen, setAddCardIsOpen] = useState(false);
   const [title, setTitle] = useState('');
-  const [categoryToCreate, setCategoryToCreate] = useState('');
+  const [statusToCreate, setStatusToCreate] = useState('');
   const [description, setDescription] = useState('');
-  const [createCard, { data: cardData, error: cardError, isLoading: isCreateCardLoading }] = useCreateCardMutation();
+  const [createCard, { data: cardData, error: cardError, isLoading: isCreateCardLoading }] =
+    useCreateCardMutation();
 
-  const addCard = (categoryId: string) => {
+  const addCard = (statusId: string) => {
     setAddCardIsOpen(true);
-    setCategoryToCreate(categoryId);
+    setStatusToCreate(statusId);
   };
 
   const onCardSubmit = async () => {
-    await createCard({ description, title, categoryId: categoryToCreate });
+    await createCard({ description, title, statusId: statusToCreate });
   };
 
   useEffect(() => {
     if (cardData) {
-      setCategoryToCreate('');
+      setStatusToCreate('');
       setAddCardIsOpen(false);
     }
   }, [cardData]);
@@ -35,7 +36,7 @@ const UseManageAddCard = () => {
     description,
     setTitle,
     setDescription,
-    isCreateCardLoading
+    isCreateCardLoading,
   };
 };
 

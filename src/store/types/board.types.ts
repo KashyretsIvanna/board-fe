@@ -1,7 +1,7 @@
 export interface BoardById {
   id: string;
   name: string;
-  categories: {
+  statuses: {
     id: string;
     name: string;
     cards: {
@@ -9,7 +9,7 @@ export interface BoardById {
       id: string;
       title: string;
       order: number;
-      categoryId: string;
+      statusId: string;
     }[];
   }[];
 }

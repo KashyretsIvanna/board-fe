@@ -51,7 +51,7 @@ function Board() {
       >
         {data && (
           <div className={styles.board__cols_container}>
-            {data.categories.map((el) => (
+            {data.statuses.map((el) => (
               <DroppableCol
                 key={el.id}
                 onDrop={(e: React.DragEvent<HTMLDivElement>, targetItem?: TargetItem) => {
@@ -69,7 +69,7 @@ function Board() {
                     {el.name}
                   </>
                 }
-                category={el.name}
+                status={el.name}
               />
             ))}
           </div>

@@ -13,7 +13,7 @@ export const cardApi = emptySplitApi.injectEndpoints({
       invalidatesTags: [ApiTags.card, ApiTags.board],
     }),
     createCard: builder.mutation({
-      query: (body: { description: string; title: string; categoryId: string }) => ({
+      query: (body: { description: string; title: string; statusId: string }) => ({
         url: serviceRoute,
         method: 'POST',
         body,
@@ -29,7 +29,7 @@ export const cardApi = emptySplitApi.injectEndpoints({
       invalidatesTags: [ApiTags.board],
     }),
     updateCardOrder: builder.mutation({
-      query: (body: { cardId: string; categoryId?: string; order?: number }) => ({
+      query: (body: { cardId: string; statusId?: string; order?: number }) => ({
         url: serviceRoute + '/order',
         method: 'PATCH',
         body,
