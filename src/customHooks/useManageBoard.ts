@@ -4,7 +4,8 @@ import { useCreateBoardMutation } from '@/store/services/boardApi';
 
 const UseManageBoard = () => {
   const [isBoardCreateOpen, setIsBoardCreateOpen] = useState(false);
-  const [createBoard, { error, data: createdBoardData, isLoading: isCreateBoardLoading }] = useCreateBoardMutation();
+  const [createBoard, { error, data: createdBoardData, isLoading: isCreateBoardLoading }] =
+    useCreateBoardMutation();
   const [name, setName] = useState('');
   const [newIdOpen, setNewIdOpen] = useState(false);
 
@@ -30,7 +31,7 @@ const UseManageBoard = () => {
     setIsBoardCreateOpen,
     createdBoardData,
     setName,
-    isCreateBoardLoading
+    isCreateBoardLoading,
   };
 };
 

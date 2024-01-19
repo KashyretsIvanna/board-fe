@@ -7,7 +7,7 @@ import { ChildrenProp } from '@/types/children.type';
 function DroppableCol(props: {
   cards: { title: string; id: string; description: string }[];
   header: ChildrenProp;
-  category: string;
+  status: string;
   onDrop: (e: React.DragEvent<HTMLDivElement>, targetItem?: TargetItem) => void;
 }) {
   return (
@@ -24,7 +24,7 @@ function DroppableCol(props: {
       >
         {props.cards.map((el) => (
           <DraggableCard
-            from={props.category}
+            from={props.status}
             key={el.id}
             description={el.description}
             title={el.title}

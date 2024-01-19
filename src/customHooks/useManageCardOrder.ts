@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { useGetBoardByIdQuery } from '@/store/services/boardApi';
 import { useUpdateCardOrderMutation } from '@/store/services/cardApi';
@@ -21,7 +21,7 @@ const UseManageCardOrder = () => {
     const idOfDraggedCard = ev.dataTransfer.getData('id');
     const fromColumn = ev.dataTransfer.getData('from');
 
-    const toColumnData = data.categories.find((el) => el.name == toColumn);
+    const toColumnData = data.statuses.find((el) => el.name == toColumn);
     if (!fromColumn || !toColumnData) {
       return;
     }
@@ -30,7 +30,7 @@ const UseManageCardOrder = () => {
 
     await updateCardOrder({
       cardId: idOfDraggedCard,
-      categoryId: toColumnData.id,
+      statusId: toColumnData.id,
       order: targetIndex,
     });
   };
@@ -41,7 +41,7 @@ const UseManageCardOrder = () => {
     setCurrentBoardId,
     data,
     isUpdateOrderLoading,
-    isBoardByIdLoading
+    isBoardByIdLoading,
   };
 };
 

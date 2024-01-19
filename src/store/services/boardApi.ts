@@ -1,6 +1,6 @@
 /** @format */
 
-import { ApiRoutes, ApiTags } from '../constants/api.constants';
+import { ApiRoutes, ApiTags, keepUnusedDataFor } from '../constants/api.constants';
 import { emptySplitApi } from '../emptySplitApi';
 import { BoardById } from '../types/board.types';
 
@@ -13,7 +13,7 @@ export const boardApi = emptySplitApi.injectEndpoints({
         url: serviceRoute + `/${body.boardId}`,
         method: 'GET',
       }),
-      keepUnusedDataFor: 0.0001,
+      keepUnusedDataFor: keepUnusedDataFor,
       providesTags: [ApiTags.board],
     }),
 
